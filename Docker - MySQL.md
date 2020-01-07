@@ -21,20 +21,21 @@ docker run --restart always -d --name mysql5.7 \
 mysql:5.7
 ```
 
+> Tail logs MYSQL Container
 ```shell
-# Tail logs MYSQL Container
 docker logs --tail 5 --follow --timestamps mysql5.7
 ```
 
-> **Backup and Restore:**
+> Backup
 ```shell
-# Backup MYSQL
 $ docker exec mysql5.7 sh -c 'exec mysqldump --all-databases -uroot -p"mysecretpassword"' > ~/Desktop/db.sql
+```
 
-# Restore MYSQL
+> Restore
+```shell
 $ docker exec -i mysql5.7 sh -c 'exec mysql -uroot -p"mysecretpassword"' < ~/Desktop/db.sql
 ```
 
-!!! note MYSQL
+!!! note Links
 [How to Run MySQL in a Docker Container](https://medium.com/@crmcmullen/how-to-run-mysql-in-a-docker-container-on-macos-with-persistent-local-data-58b89aec496a)
 !!!
