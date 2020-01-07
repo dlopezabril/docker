@@ -12,7 +12,7 @@ chmod -R ug+w /usr/local/opt/mysql/
 ```
 
 > Enable Docker File Sharing (Docker -> Preferences -> '+')
-> Start MYSQL Container
+> Start Container
 ```shell
 docker run --restart always -d --name mysql5.7 \
 -v /usr/local/opt/mysql/5.7:/var/lib/mysql \
@@ -21,7 +21,7 @@ docker run --restart always -d --name mysql5.7 \
 mysql:5.7
 ```
 
-> Tail logs MYSQL Container
+> Tail logs
 ```shell
 docker logs --tail 5 --follow --timestamps mysql5.7
 ```
