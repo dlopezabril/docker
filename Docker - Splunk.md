@@ -11,20 +11,32 @@ chmod -R ug+w /usr/local/opt/splunk/
 ```
 
 > Enable Docker File Sharing (Docker -> Preferences -> '+')
-> Start Container
 ```shell
 docker run -d --name splunk \
 -p 8000:8000 \
 -e "SPLUNK_START_ARGS=--accept-license" \
 -e "SPLUNK_PASSWORD=mysecretpassword" \
--v /usr/local/opt/splunk/7.3.3/etc:/opt/splunk/etc \
--v /usr/local/opt/splunk/7.3.3/var:/opt/splunk/var \
 splunk/splunk:7.3.3
 ```
+```shell
+docker run -d -p 8000:8000 -e "SPLUNK_START_ARGS=--accept-license" -e "SPLUNK_PASSWORD=mysecretpassword" --name splunk splunk/splunk:7.3.3
+```
+```shell
+open -n /Applications/Google\ Chrome.app/
+```
 
-4 minutes later... http://gitlab.local:30080
+admin - mysecretpassword
+http://localhost:8000/
 
 > Tail logs
 ```shell
-docker logs --tail 5 --follow --timestamps gitlab
+docker logs --tail 5 --follow --timestamps splunk
 ```
+
+Install App:   Apps → Manage Apps → Browse more apps
+Configuration: Settings → (SYSTEM) Server Settings
+Licensing:     Settings → (SYSTEM) Licensing
+Sourcetype:    Settings → (DATA) Source types
+Eventgenerator:
+
+[GitHub - splunk/eventgen: Splunk Event Generator: Eventgen](https://github.com/splunk/eventgen)
