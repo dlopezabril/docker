@@ -8,6 +8,7 @@ open -n /Applications/Docker.app
 ```shell
 docker stop $(docker ps -a -q)
 ```
+
 > Remove all containers
 ```shell
 docker rm $(docker ps -a -q)
