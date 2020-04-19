@@ -2,7 +2,7 @@
 
 
 # Create directory
-mkdir -p ~/docker/mysql
+mkdir -p ~/Desktop/mysql
 
 # Start Container
 docker run --detach \
