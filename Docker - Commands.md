@@ -1,22 +1,14 @@
 # Docker - System Commands
 
-> Start Docker App
-```shell
-open -n /Applications/Docker.app
-```
-> Stop all images
-```shell
-docker stop $(docker ps -a -q)
-```
-> Remove all containers
-```shell
-docker rm $(docker ps -a -q)
-```
-> Delete all images
-```shell
+
+# Stop all images
+docker container stop $(docker container ps -a -q)
+
+# Remove all containers
+docker container rm $(docker container ps -a -q)
+
+# Delete all images
 docker rmi $(docker images -a -q)
-```
-> Get container IP
-```shell
+
+# Get container IP
 docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' container_id
-```
