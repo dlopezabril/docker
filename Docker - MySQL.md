@@ -5,7 +5,7 @@
 mkdir -p ~/Desktop/mysql
 
 # Start Container
-sudo docker run --restart always -d --name mysql5.7 \
+docker run --restart always -d --name mysql5.7 \
 -v ~/Desktop/mysql:/var/lib/mysql \
 -p 3306:3306 \
 -e MYSQL_ROOT_PASSWORD=mysecretpassword \
