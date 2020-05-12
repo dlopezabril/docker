@@ -1,6 +1,5 @@
 # Docker - MongoDB
 
-
 # Create directory
 mkdir -p ~/Desktop/mongo
 
