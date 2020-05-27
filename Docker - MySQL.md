@@ -2,11 +2,11 @@
 
 
 # Create directory
-mkdir -p ~/Desktop/mysql
+mkdir -p ~/containers/mysql
 
 # Start Container
 docker run --restart always -d --name mysql5.7 \
--v ~/Desktop/mysql:/var/lib/mysql \
+-v ~/containers/mysql:/var/lib/mysql \
 -p 3306:3306 \
 -e MYSQL_ROOT_PASSWORD=mysecretpassword \
 mysql:5.7
