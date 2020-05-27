@@ -14,4 +14,4 @@ docker rmi $(docker images -a -q)
 docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' container_id
 
 # List
-watch docker ps
+watch docker ps -a
