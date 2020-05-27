@@ -5,17 +5,20 @@
 mkdir -p ~/containers/mysql
 
 # Start Container
+
+# CENTOS
 docker run --restart always -d --name mysql5.7 \
 -p 3306:3306 \
 -e MYSQL_ROOT_PASSWORD=mysecretpassword \
 mysql:5.7
 
-# Not working in Centos
+# UBUNTU
 docker run --restart always -d --name mysql5.7 \
 -v ~/containers/mysql:/var/lib/mysql:rw \
 -p 3306:3306 \
 -e MYSQL_ROOT_PASSWORD=mysecretpassword \
 mysql:5.7
+
 
 # Tail logs
 docker logs --tail 100 --follow --timestamps mysql5.7
