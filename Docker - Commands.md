@@ -1,8 +1,10 @@
 # Docker - System Commands
 
-
 # Stop all images
 docker container stop $(docker container ps -a -q)
+
+# Start all images
+docker container start $(docker container ps -a -q)
 
 # Remove all containers
 docker container rm $(docker container ps -a -q)
